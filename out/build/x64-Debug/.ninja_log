@@ -1,0 +1,13 @@
+# ninja log v5
+59	6261	7275766729905365	CMakeFiles/oop1_ex01.dir/src/Vertex.cpp.obj	ee6ad76cad655390
+64	6550	7275766732789980	CMakeFiles/oop1_ex01.dir/src/Window.cpp.obj	872594532a74ed10
+8	91	0	C:/Users/Salama Malek/Downloads/project/project/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	4b7dce1e533c70d7
+40	4761	7275775646550729	CMakeFiles/oop1_ex01.dir/src/main.cpp.obj	704f3a450cfe4da1
+35	7082	7275766738155553	CMakeFiles/oop1_ex01.dir/src/Board.cpp.obj	ef6130392a2e679f
+33	45	0	clean	8c45b54705a541e8
+39	6561	7275766732946204	CMakeFiles/oop1_ex01.dir/src/Hexagram.cpp.obj	ae1df8c23b7907f0
+52	1952	7275766686628245	CMakeFiles/oop1_ex01.dir/src/Utilities.cpp.obj	4aff7661fe954d60
+43	6467	7275766732011987	CMakeFiles/oop1_ex01.dir/src/Rectangle.cpp.obj	ea23b6284367348a
+48	6445	7275766731768321	CMakeFiles/oop1_ex01.dir/src/Triangle.cpp.obj	32e2da7e03e82bb
+4761	4993	7275775648471326	oop1_ex01.exe	b16d81e46b6039fb
+4	37	0	C:/Users/Salama Malek/Downloads/project/project/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	4b7dce1e533c70d7
