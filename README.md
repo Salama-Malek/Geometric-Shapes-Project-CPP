@@ -79,3 +79,7 @@ The active shape is selected at compile time via the `RECTANGLE` / `TRIANGLE` / 
     ├── Vertex.cpp
     └── main.cpp
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
