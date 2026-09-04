@@ -1,48 +1,81 @@
 # Geometric Shapes Project
-1. Title: Geometric Shapes Project
 
-2. Student's details:
-   <!-- Full Name: [Your Full Name] -->
-   <!-- ID: [Your Student ID] -->
+A C++20 console application that models geometric shapes and renders them on an ASCII board.
 
-3. General explanation of the exercise:
-   This project involves implementing four classes representing geometric shapes (Rectangle, Triangle, Window, and Hexagram) and utilizing them to draw shapes on a board. Each class has specific constructors and functions as per the exercise requirements.
+## Overview
 
-4. List of created files:
-   - Rectangle.h
-   - Rectangle.cpp
-   - Triangle.h
-   - Triangle.cpp
-   - Window.h
-   - Window.cpp
-   - Hexagram.h
-   - Hexagram.cpp
-   - Board.h
-   - Board.cpp
-   - Utilities.h
-   - Utilities.cpp
-   - Vertex.h
-   - macros.h
-   - main.cpp
-   - CMakeLists.txt
-   - README.txt
+This project implements a small object-oriented shape library in C++20. Four shape classes — `Rectangle`, `Triangle`, `Window`, and `Hexagram` — each expose a consistent interface for drawing, scaling, and querying geometric properties (perimeter, area, center, bounding rectangle). A `Board` class renders shapes as ASCII art to the console, and `main.cpp` drives an interactive demo: it prompts for vertex coordinates, draws the resulting shape (with and without its bounding rectangle), prints its computed properties, and then repeats the process after scaling the shape by a factor of 2.
 
-5. Main data structures and their functions:
-   - Rectangle: Represents a rectangle and provides functions to manipulate and retrieve information about the rectangle.
-   - Triangle: Represents an equilateral triangle and provides functions for construction and information retrieval.
-   - Window: Represents a frame created from two rectangles and provides functions for manipulation and information retrieval.
-   - Hexagram: Represents a Star of David created from two triangles and provides functions for manipulation and information retrieval.
-   - Board: Provides functions for drawing shapes on a virtual board.
-   - Utilities: Contains general auxiliary functions used in implementing the board functions.
-   - Vertex: Defines a struct representing a vertex in the plane with x and y coordinates.
-   - macros.h: Defines constants COL_MAX and ROW_MAX.
-   - main.cpp: Contains the main program to create and draw shapes.
+## Features
 
-6. Worth knowing Algorithms: 
-   - The area and perimeter calculations for each shape.
-   - Scaling algorithm for resizing shapes.
+- **Rectangle** — defined by its bottom-left and top-right vertices.
+- **Triangle** — an equilateral triangle defined by three vertices, with side length and area derived geometrically.
+- **Window** — a frame shape composed of an outer and inner `Rectangle`, with computed horizontal/vertical thickness.
+- **Hexagram** — a Star-of-David shape composed of two overlapping `Triangle` instances.
+- **Board** — an ASCII drawing surface (70 columns x 50 rows) that renders lines between vertices and prints them to the console.
+- Every shape supports `draw`, `scale`, `getBoundingRectangle`, `getPerimeter`, `getArea`, and `getCenter`.
+- Interactive console workflow: reads shape vertices from stdin, displays the shape before and after a 2x scale.
 
-7. Known bugs: [If any]
+## Tech stack
 
-8. Other comments: [Any additional comments or notes]
+- C++20
+- CMake 3.26+ (with CMake Presets)
+- AddressSanitizer enabled automatically in Debug builds
 
+## Getting started
+
+### Prerequisites
+
+- A C++20 compiler (MSVC, Clang, or GCC)
+- CMake 3.26 or newer
+
+### Build
+
+Using the provided CMake presets:
+
+```bash
+cmake --preset x64-Debug
+cmake --build --preset x64-Debug
+```
+
+Or with a plain CMake configure/build (any generator):
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
+```
+
+### Run
+
+```bash
+./build/oop1_ex01
+```
+
+The active shape is selected at compile time via the `RECTANGLE` / `TRIANGLE` / `WINDOW` / `HEXAGRAM` preprocessor switches at the top of `src/main.cpp` (only one is enabled at a time by default). Set the desired switch to `1` and the others to `0`, then rebuild to try a different shape.
+
+## Project structure
+
+```
+.
+├── CMakeLists.txt
+├── CMakePresets.json
+├── cmake/
+│   ├── CompilerSettings.cmake
+│   └── Zip.cmake
+├── include/
+│   ├── Board.h
+│   ├── Rectangle.h
+│   ├── Triangle.h
+│   ├── Window.h
+│   ├── Hexagram.h
+│   ├── Vertex.h
+│   └── macros.h
+└── src/
+    ├── Board.cpp
+    ├── Rectangle.cpp
+    ├── Triangle.cpp
+    ├── Window.cpp
+    ├── Hexagram.cpp
+    ├── Vertex.cpp
+    └── main.cpp
+```
